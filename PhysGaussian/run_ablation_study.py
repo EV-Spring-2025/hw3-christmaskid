@@ -63,15 +63,19 @@ def run_simulation(model_path, config, material, output_base,
     print(f"Running experiment: {exp_name}")
     print(f"Command: {' '.join(cmd)}")
     print(f"Output path: {output_path}")
-    print(f"{'='*60}")
+    print(f"{'='*60}", flush=True)
     
     # Create output directory
     os.makedirs(output_path, exist_ok=True)
     
+    # Setup combined log file for stdout and stderr
+    combined_log = os.path.join(output_path, "simulation.log")
+    
     # Run simulation
     start_time = time.time()
     try:
-        result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+        with open(combined_log, 'w') as log_file:
+            result = subprocess.run(cmd, check=True, stdout=log_file, stderr=subprocess.STDOUT, text=True)
         end_time = time.time()
         duration = end_time - start_time
         
@@ -93,11 +97,8 @@ def run_simulation(model_path, config, material, output_base,
                 f.write(f"grid_v_damping_scale: {grid_v_damping_scale}\n")
             if softening is not None:
                 f.write(f"softening: {softening}\n")
-            f.write("\nSTDOUT:\n")
-            f.write(result.stdout)
-            if result.stderr:
-                f.write("\nSTDERR:\n")
-                f.write(result.stderr)
+            f.write(f"\nOutput redirected to:\n")
+            f.write(f"  combined log: {combined_log}\n")
         
         return True, duration
         
@@ -116,8 +117,8 @@ def run_simulation(model_path, config, material, output_base,
             f.write(f"Duration: {duration:.2f} seconds\n")
             f.write(f"Command: {' '.join(cmd)}\n")
             f.write(f"Error: {e}\n")
-            f.write(f"\nSTDOUT:\n{e.stdout}\n")
-            f.write(f"\nSTDERR:\n{e.stderr}\n")
+            f.write(f"\nOutput logs:\n")
+            f.write(f"  combined log: {combined_log}\n")
         
         return False, duration
 
