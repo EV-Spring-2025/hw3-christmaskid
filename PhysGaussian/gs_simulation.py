@@ -111,7 +111,7 @@ if __name__ == "__main__":
     print(f"Using n_grid: {material_params['n_grid']}")
     print(f"Using substep_dt: {time_params['substep_dt']}")
     print(f"Using grid_v_damping_scale: {material_params['grid_v_damping_scale']}")
-    print(f"Using softening: {material_params['softening']}")
+    print(f"Using softening: {material_params.get('softening', None)}")
 
     # load gaussians
     print("Loading gaussians...")
