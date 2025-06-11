@@ -21,7 +21,11 @@ apt install ffmpeg # If not downloaded
 
 # Download the checkpoints provided from the original repo
 pip install gdown
-bash download_sample_model.sh
+# bash download_sample_model.sh
+gdown 17viNGxkhbJSlxtgJDK2sW2DEH3NdRwa-
+unzip plane-trained.zip
+mkdir model
+mv plane-trained model/
 ```
 
 ### Troubleshooting
@@ -90,4 +94,24 @@ Please complete Part 1–2 as described in the [Google Slides](https://docs.goog
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
     year      = {2024}
 }
+```
+
+## Appendix
+Environment setup On meow1/2 server: (Thanks to classmate 陳仲肯 on Discord)
+```bash
+conda create -n PhysGaussian python=3.9
+conda activate PhysGaussian
+
+pip install torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+conda install cuda-nvcc=11.8* cuda-libraries-dev=11.8* -c nvidia
+conda install gxx=11.4.0 -c conda-forge
+
+export CUDA_HOME=$CONDA_PREFIX
+export CPATH=$CONDA_PREFIX/targets/x86_64-linux/include:$CPATH
+export LD_LIBRARY_PATH=$CONDA_PREFIX/targets/x86_64-linux/lib:$LD_LIBRARY_PATH
+export PATH=$CONDA_PREFIX/bin:$PATH
+
+pip install -e gaussian-splatting/submodules/diff-gaussian-rasterization/ --verbose
+pip install -e gaussian-splatting/submodules/simple-knn/ --verbose
 ```

@@ -74,10 +74,10 @@ def decode_param_json(json_file, material, n_grid, substep_dt,
     if "pic_damping" in sim_params.keys():
         material_params["pic_damping"] = sim_params["pic_damping"]
 
-    if "softening" in sim_params.keys():
-        if softening:
-            material_params["softening"] = softening
-        else:
+    if softening:
+        material_params["softening"] = softening
+    else:
+        if "softening" in sim_params.keys():
             material_params["softening"] = sim_params["softening"]
 
     if "opacity_threshold" in sim_params.keys():
