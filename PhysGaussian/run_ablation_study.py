@@ -1,17 +1,4 @@
-#!/usr/bin/env python3
-"""
-Ablation Study Script for PhysGaussian
-
-This script runs systematic ablation studies by varying one parameter at a time
-while keeping others at default values. It tests different combinations of:
-- n_grid: 60, 240, or default
-- substep_dt: 5e-5, 2e-4, or default  
-- grid_v_damping_scale: 0.95, 0.99999, or default
-- softening: 0.05, 0.2, or default
-- material: metal, jelly
-
-Only one flag is varied per experiment for proper ablation analysis.
-"""
+# This script is generated with the help of Github Copilot, using Claude Sonnet 4.
 
 import os
 import subprocess
@@ -138,7 +125,7 @@ def run_ablation_study():
     materials = ["metal", "jelly"]
     n_grid_values = [60, 240, None]  # None = use default
     substep_dt_values = [5e-5, 2e-4, None]  # None = use default
-    grid_v_damping_scale_values = [0.95, 0.99999, None]  # None = use default
+    grid_v_damping_scale_values = [0.9995, 1.005, None]  # None = use default
     softening_values = [0.05, 0.2, None]  # None = use default
     
     # Track all experiments
