@@ -1,0 +1,9 @@
+Experiment: metal_dt5e-05
+Start time: 2025-06-12 01:04:58.369507
+Duration: 229.11 seconds
+Command: python gs_simulation.py --model_path ./model/plane-trained/ --output_path ./ablation_results/metal_dt5e-05 --config ./config/plane_config.json --material metal --render_img --compile_video --white_bg --substep_dt 5e-05
+Material: metal
+substep_dt: 5e-05
+
+Output redirected to:
+  combined log: ./ablation_results/metal_dt5e-05/simulation.log

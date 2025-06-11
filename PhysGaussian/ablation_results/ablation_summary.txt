@@ -1,0 +1,38 @@
+PhysGaussian Ablation Study Summary
+==================================================
+
+Study completed: 2025-06-12 01:48:10.320516
+Total duration: 3933.01 seconds (1.09 hours)
+Model path: ./model/plane-trained/
+Config: ./config/plane_config.json
+
+Total experiments: 18
+Successful: 18
+Failed: 0
+
+Successful experiments:
+  ✓ baseline_metal
+  ✓ baseline_jelly
+  ✓ ngrid_60_metal
+  ✓ ngrid_240_metal
+  ✓ ngrid_60_jelly
+  ✓ ngrid_240_jelly
+  ✓ dt_5e-05_metal
+  ✓ dt_0.0002_metal
+  ✓ dt_5e-05_jelly
+  ✓ dt_0.0002_jelly
+  ✓ damping_0.9995_metal
+  ✓ damping_1.005_metal
+  ✓ damping_0.9995_jelly
+  ✓ damping_1.005_jelly
+  ✓ soft_0.05_metal
+  ✓ soft_0.2_metal
+  ✓ soft_0.05_jelly
+  ✓ soft_0.2_jelly
+
+Parameter combinations tested:
+  Materials: ['metal', 'jelly']
+  n_grid: [60, 240] + default
+  substep_dt: [5e-05, 0.0002] + default
+  grid_v_damping_scale: [0.9995, 1.005] + default
+  softening: [0.05, 0.2] + default
