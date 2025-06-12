@@ -109,21 +109,38 @@ def run_simulation(model_path, config, material, output_base,
         
         return False, duration
 
+def run_evaluation(output_base, material, exp_name):
+    """Run evaluation for a single material"""
+    cmd = [
+        "python", "psnr.py", 
+        "--predicted_dir", os.path.join(output_base, exp_name),
+        "--gt_output_dir", os.path.join(output_base, material),
+    ]
+    print(f"\nRunning evaluation for {exp_name}...")
+    print(f"Command: {' '.join(cmd)}")
+    try:
+        result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+        print(f"Evaluation completed successfully:\n{result.stdout}")
+    except subprocess.CalledProcessError as e:
+        print(f"Evaluation failed for {exp_name}:\n{e.stderr}")
+        return False
+
 
 def run_ablation_study():
     """Run complete ablation study"""
     
     # Configuration
-    model_path = "./model/plane-trained/"
-    config = "./config/plane_config.json"
+    model_path = "./model/ficus_whitebg-trained/"
+    config = "./config/ficus_config.json"
     output_base = "./ablation_results"
     
     # Create base output directory
     os.makedirs(output_base, exist_ok=True)
     
     # Parameter values to test
-    materials = ["metal", "jelly"]
-    n_grid_values = [60, 240, None]  # None = use default
+    all_materials = ["jelly", "sand", "snow", "metal", "foam", "plasticine"]
+    materials = ["jelly", "sand"]
+    n_grid_values = [25, 100, None]  # None = use default
     substep_dt_values = [5e-5, 2e-4, None]  # None = use default
     grid_v_damping_scale_values = [0.9995, 1.005, None]  # None = use default
     softening_values = [0.05, 0.2, None]  # None = use default
@@ -143,8 +160,8 @@ def run_ablation_study():
     study_start_time = time.time()
     
     # Run baseline experiments (all defaults)
-    for material in materials:
-        exp_name = f"baseline_{material}"
+    for material in all_materials:
+        exp_name = f"{material}"
         all_experiments.append(exp_name)
         
         success, duration = run_simulation(
@@ -161,7 +178,7 @@ def run_ablation_study():
     for material in materials:
         for n_grid in n_grid_values:
             if n_grid is not None:  # Skip default (already tested in baseline)
-                exp_name = f"ngrid_{n_grid}_{material}"
+                exp_name = f"{material}_ngrid{n_grid}"
                 all_experiments.append(exp_name)
                 
                 success, duration = run_simulation(
@@ -173,12 +190,18 @@ def run_ablation_study():
                     successful_experiments.append(exp_name)
                 else:
                     failed_experiments.append(exp_name)
+
+                eval_success = run_evaluation(output_base, material, exp_name)
+                if eval_success:
+                    print(f"Evaluation for {exp_name} completed successfully.")
+                else:
+                    print(f"Evaluation for {exp_name} failed.")
     
     # Run substep_dt ablation
     for material in materials:
         for substep_dt in substep_dt_values:
             if substep_dt is not None:  # Skip default (already tested in baseline)
-                exp_name = f"dt_{substep_dt}_{material}"
+                exp_name = f"{material}_dt{substep_dt}"
                 all_experiments.append(exp_name)
                 
                 success, duration = run_simulation(
@@ -191,11 +214,17 @@ def run_ablation_study():
                 else:
                     failed_experiments.append(exp_name)
     
+                eval_success = run_evaluation(output_base, material, exp_name)
+                if eval_success:
+                    print(f"Evaluation for {exp_name} completed successfully.")
+                else:
+                    print(f"Evaluation for {exp_name} failed.")
+
     # Run grid_v_damping_scale ablation
     for material in materials:
         for damping in grid_v_damping_scale_values:
             if damping is not None:  # Skip default (already tested in baseline)
-                exp_name = f"damping_{damping}_{material}"
+                exp_name = f"{material}_damping{damping}"
                 all_experiments.append(exp_name)
                 
                 success, duration = run_simulation(
@@ -209,11 +238,17 @@ def run_ablation_study():
                 else:
                     failed_experiments.append(exp_name)
     
+                eval_success = run_evaluation(output_base, material, exp_name)
+                if eval_success:
+                    print(f"Evaluation for {exp_name} completed successfully.")
+                else:
+                    print(f"Evaluation for {exp_name} failed.")
+                    
     # Run softening ablation
     for material in materials:
         for soft in softening_values:
             if soft is not None:  # Skip default (already tested in baseline)
-                exp_name = f"soft_{soft}_{material}"
+                exp_name = f"{material}_soft{soft}"
                 all_experiments.append(exp_name)
                 
                 success, duration = run_simulation(
@@ -226,6 +261,13 @@ def run_ablation_study():
                 else:
                     failed_experiments.append(exp_name)
     
+                eval_success = run_evaluation(output_base, material, exp_name)
+                if eval_success:
+                    print(f"Evaluation for {exp_name} completed successfully.")
+                else:
+                    print(f"Evaluation for {exp_name} failed.")
+                    
+
     study_end_time = time.time()
     study_duration = study_end_time - study_start_time
     
