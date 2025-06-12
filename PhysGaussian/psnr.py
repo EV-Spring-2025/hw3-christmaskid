@@ -62,16 +62,6 @@ def main():
     
     args = parser.parse_args()
     
-    # Check if predicted directory exists
-    if not os.path.exists(args.predicted_dir):
-        print(f"Predicted directory {args.predicted_dir} does not exist!")
-        return
-    
-    # Check if model path exists
-    if not os.path.exists(args.model_path):
-        print(f"Model path {args.model_path} does not exist!")
-        return
-    
     # Calculate average PSNR
     avg_psnr, psnr_values = calculate_average_psnr(args.predicted_dir, args.gt_output_dir)
     
