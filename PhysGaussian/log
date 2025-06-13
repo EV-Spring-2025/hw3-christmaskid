@@ -1,0 +1,353 @@
+Starting PhysGaussian Ablation Study
+Model path: ./model/ficus_whitebg-trained/
+Config: ./config/ficus_config.json
+Output base: ./ablation_results
+Materials: ['jelly', 'sand']
+
+============================================================
+Running experiment: jelly
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg
+Output path: ./ablation_results/jelly
+============================================================
+✓ Experiment completed successfully in 216.00 seconds
+
+============================================================
+Running experiment: sand
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg
+Output path: ./ablation_results/sand
+============================================================
+✓ Experiment completed successfully in 111.48 seconds
+
+============================================================
+Running experiment: snow
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/snow --config ./config/ficus_config.json --material snow --render_img --compile_video --white_bg
+Output path: ./ablation_results/snow
+============================================================
+✓ Experiment completed successfully in 257.33 seconds
+
+============================================================
+Running experiment: metal
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/metal --config ./config/ficus_config.json --material metal --render_img --compile_video --white_bg
+Output path: ./ablation_results/metal
+============================================================
+✓ Experiment completed successfully in 118.26 seconds
+
+============================================================
+Running experiment: foam
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/foam --config ./config/ficus_config.json --material foam --render_img --compile_video --white_bg
+Output path: ./ablation_results/foam
+============================================================
+✓ Experiment completed successfully in 98.93 seconds
+
+============================================================
+Running experiment: plasticine
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/plasticine --config ./config/ficus_config.json --material plasticine --render_img --compile_video --white_bg
+Output path: ./ablation_results/plasticine
+============================================================
+✓ Experiment completed successfully in 106.00 seconds
+
+============================================================
+Running experiment: jelly_ngrid25
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_ngrid25 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --n_grid 25
+Output path: ./ablation_results/jelly_ngrid25
+============================================================
+✓ Experiment completed successfully in 94.35 seconds
+
+Running evaluation for jelly_ngrid25...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_ngrid25 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 76.2453
+Min PSNR: 70.7445
+Max PSNR: 88.5334
+Std PSNR: 3.4255
+
+Evaluation for jelly_ngrid25 completed successfully.
+
+============================================================
+Running experiment: jelly_ngrid100
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_ngrid100 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --n_grid 100
+Output path: ./ablation_results/jelly_ngrid100
+============================================================
+✓ Experiment completed successfully in 77.06 seconds
+
+Running evaluation for jelly_ngrid100...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_ngrid100 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 76.2126
+Min PSNR: 69.9708
+Max PSNR: 88.7627
+Std PSNR: 3.3529
+
+Evaluation for jelly_ngrid100 completed successfully.
+
+============================================================
+Running experiment: sand_ngrid25
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_ngrid25 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --n_grid 25
+Output path: ./ablation_results/sand_ngrid25
+============================================================
+✓ Experiment completed successfully in 72.16 seconds
+
+Running evaluation for sand_ngrid25...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_ngrid25 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 44.3984
+Min PSNR: 28.3425
+Max PSNR: 80.9034
+Std PSNR: 12.4324
+
+Evaluation for sand_ngrid25 completed successfully.
+
+============================================================
+Running experiment: sand_ngrid100
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_ngrid100 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --n_grid 100
+Output path: ./ablation_results/sand_ngrid100
+============================================================
+✓ Experiment completed successfully in 71.70 seconds
+
+Running evaluation for sand_ngrid100...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_ngrid100 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 45.6289
+Min PSNR: 31.2236
+Max PSNR: 81.1140
+Std PSNR: 11.4335
+
+Evaluation for sand_ngrid100 completed successfully.
+
+============================================================
+Running experiment: jelly_dt5e-05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_dt5e-05 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --substep_dt 5e-05
+Output path: ./ablation_results/jelly_dt5e-05
+============================================================
+✓ Experiment completed successfully in 136.47 seconds
+
+Running evaluation for jelly_dt5e-05...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_dt5e-05 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 22.0810
+Min PSNR: 18.2817
+Max PSNR: 38.1129
+Std PSNR: 4.0428
+
+Evaluation for jelly_dt5e-05 completed successfully.
+
+============================================================
+Running experiment: sand_dt5e-05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_dt5e-05 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --substep_dt 5e-05
+Output path: ./ablation_results/sand_dt5e-05
+============================================================
+✓ Experiment completed successfully in 125.70 seconds
+
+Running evaluation for sand_dt5e-05...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_dt5e-05 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 14.8343
+Min PSNR: 14.0148
+Max PSNR: 20.5410
+Std PSNR: 1.1556
+
+Evaluation for sand_dt5e-05 completed successfully.
+
+============================================================
+Running experiment: jelly_damping0.9995
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_damping0.9995 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --grid_v_damping_scale 0.9995
+Output path: ./ablation_results/jelly_damping0.9995
+============================================================
+✓ Experiment completed successfully in 75.74 seconds
+
+Running evaluation for jelly_damping0.9995...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_damping0.9995 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 22.0811
+Min PSNR: 18.3380
+Max PSNR: 40.2706
+Std PSNR: 4.3568
+
+Evaluation for jelly_damping0.9995 completed successfully.
+
+============================================================
+Running experiment: jelly_damping1.005
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_damping1.005 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --grid_v_damping_scale 1.005
+Output path: ./ablation_results/jelly_damping1.005
+============================================================
+✓ Experiment completed successfully in 72.85 seconds
+
+Running evaluation for jelly_damping1.005...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_damping1.005 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 19.9981
+Min PSNR: 17.6114
+Max PSNR: 41.7613
+Std PSNR: 3.5456
+
+Evaluation for jelly_damping1.005 completed successfully.
+
+============================================================
+Running experiment: sand_damping0.9995
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_damping0.9995 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --grid_v_damping_scale 0.9995
+Output path: ./ablation_results/sand_damping0.9995
+============================================================
+✓ Experiment completed successfully in 74.92 seconds
+
+Running evaluation for sand_damping0.9995...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_damping0.9995 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 14.9587
+Min PSNR: 13.8999
+Max PSNR: 30.6306
+Std PSNR: 1.9592
+
+Evaluation for sand_damping0.9995 completed successfully.
+
+============================================================
+Running experiment: sand_damping1.005
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_damping1.005 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --grid_v_damping_scale 1.005
+Output path: ./ablation_results/sand_damping1.005
+============================================================
+✓ Experiment completed successfully in 66.61 seconds
+
+Running evaluation for sand_damping1.005...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_damping1.005 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 15.6896
+Min PSNR: 14.1726
+Max PSNR: 41.5800
+Std PSNR: 3.1444
+
+Evaluation for sand_damping1.005 completed successfully.
+
+============================================================
+Running experiment: jelly_soft0.05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_soft0.05 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --softening 0.05
+Output path: ./ablation_results/jelly_soft0.05
+============================================================
+✓ Experiment completed successfully in 74.57 seconds
+
+Running evaluation for jelly_soft0.05...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_soft0.05 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 76.3050
+Min PSNR: 69.7489
+Max PSNR: 87.7832
+Std PSNR: 3.3020
+
+Evaluation for jelly_soft0.05 completed successfully.
+
+============================================================
+Running experiment: jelly_soft0.2
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_soft0.2 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --softening 0.2
+Output path: ./ablation_results/jelly_soft0.2
+============================================================
+✓ Experiment completed successfully in 74.83 seconds
+
+Running evaluation for jelly_soft0.2...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_soft0.2 --gt_output_dir ./ablation_results/jelly
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 76.3466
+Min PSNR: 71.6259
+Max PSNR: 87.9103
+Std PSNR: 3.3307
+
+Evaluation for jelly_soft0.2 completed successfully.
+
+============================================================
+Running experiment: sand_soft0.05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_soft0.05 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --softening 0.05
+Output path: ./ablation_results/sand_soft0.05
+============================================================
+✓ Experiment completed successfully in 69.98 seconds
+
+Running evaluation for sand_soft0.05...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_soft0.05 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 45.5952
+Min PSNR: 27.4185
+Max PSNR: 82.0540
+Std PSNR: 14.2054
+
+Evaluation for sand_soft0.05 completed successfully.
+
+============================================================
+Running experiment: sand_soft0.2
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_soft0.2 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --softening 0.2
+Output path: ./ablation_results/sand_soft0.2
+============================================================
+✓ Experiment completed successfully in 70.79 seconds
+
+Running evaluation for sand_soft0.2...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_soft0.2 --gt_output_dir ./ablation_results/sand
+Evaluation completed successfully:
+Calculating PSNR for 125 image pairs...
+
+Results:
+Number of image pairs: 125
+Average PSNR: 44.5533
+Min PSNR: 28.3077
+Max PSNR: 81.8098
+Std PSNR: 12.8003
+
+Evaluation for sand_soft0.2 completed successfully.
+
+================================================================================
+ABLATION STUDY COMPLETE
+================================================================================
+Total experiments: 20
+Successful: 20
+Failed: 0
+Total duration: 2167.10 seconds (0.60 hours)
+Average per experiment: 108.36 seconds
+
+Summary saved to: ./ablation_results/ablation_summary.txt
+Individual experiment results in: ./ablation_results

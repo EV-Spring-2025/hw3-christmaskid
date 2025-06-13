@@ -1,0 +1,9 @@
+Experiment: sand_damping1.005
+Start time: 2025-06-13 23:03:29.020712
+Duration: 66.61 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_damping1.005 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --grid_v_damping_scale 1.005
+Material: sand
+grid_v_damping_scale: 1.005
+
+Output redirected to:
+  combined log: ./ablation_results/sand_damping1.005/simulation.log

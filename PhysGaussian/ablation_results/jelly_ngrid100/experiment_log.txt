@@ -1,0 +1,9 @@
+Experiment: jelly_ngrid100
+Start time: 2025-06-13 22:50:43.509327
+Duration: 77.06 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_ngrid100 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --n_grid 100
+Material: jelly
+n_grid: 100
+
+Output redirected to:
+  combined log: ./ablation_results/jelly_ngrid100/simulation.log

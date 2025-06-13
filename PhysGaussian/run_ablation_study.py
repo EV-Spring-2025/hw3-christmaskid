@@ -121,6 +121,7 @@ def run_evaluation(output_base, material, exp_name):
     try:
         result = subprocess.run(cmd, check=True, capture_output=True, text=True)
         print(f"Evaluation completed successfully:\n{result.stdout}")
+        return True
     except subprocess.CalledProcessError as e:
         print(f"Evaluation failed for {exp_name}:\n{e.stderr}")
         return False
@@ -141,7 +142,7 @@ def run_ablation_study():
     all_materials = ["jelly", "sand", "snow", "metal", "foam", "plasticine"]
     materials = ["jelly", "sand"]
     n_grid_values = [25, 100, None]  # None = use default
-    substep_dt_values = [5e-5, 2e-4, None]  # None = use default
+    substep_dt_values = [5e-5, None]  # None = use default
     grid_v_damping_scale_values = [0.9995, 1.005, None]  # None = use default
     softening_values = [0.05, 0.2, None]  # None = use default
     

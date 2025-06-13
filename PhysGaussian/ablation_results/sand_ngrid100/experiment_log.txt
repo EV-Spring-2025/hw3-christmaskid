@@ -1,0 +1,9 @@
+Experiment: sand_ngrid100
+Start time: 2025-06-13 22:53:27.889084
+Duration: 71.70 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_ngrid100 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --n_grid 100
+Material: sand
+n_grid: 100
+
+Output redirected to:
+  combined log: ./ablation_results/sand_ngrid100/simulation.log

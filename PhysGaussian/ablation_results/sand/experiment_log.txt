@@ -1,0 +1,8 @@
+Experiment: sand
+Start time: 2025-06-13 22:37:30.934678
+Duration: 111.48 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg
+Material: sand
+
+Output redirected to:
+  combined log: ./ablation_results/sand/simulation.log

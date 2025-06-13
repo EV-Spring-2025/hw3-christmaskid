@@ -1,0 +1,9 @@
+Experiment: sand_dt5e-05
+Start time: 2025-06-13 22:57:11.324177
+Duration: 125.70 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_dt5e-05 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --substep_dt 5e-05
+Material: sand
+substep_dt: 5e-05
+
+Output redirected to:
+  combined log: ./ablation_results/sand_dt5e-05/simulation.log

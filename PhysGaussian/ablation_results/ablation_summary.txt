@@ -1,38 +1,40 @@
 PhysGaussian Ablation Study Summary
 ==================================================
 
-Study completed: 2025-06-12 01:48:10.320516
-Total duration: 3933.01 seconds (1.09 hours)
-Model path: ./model/plane-trained/
-Config: ./config/plane_config.json
+Study completed: 2025-06-13 23:10:02.033608
+Total duration: 2167.10 seconds (0.60 hours)
+Model path: ./model/ficus_whitebg-trained/
+Config: ./config/ficus_config.json
 
-Total experiments: 18
-Successful: 18
+Total experiments: 20
+Successful: 20
 Failed: 0
 
 Successful experiments:
-  ✓ baseline_metal
-  ✓ baseline_jelly
-  ✓ ngrid_60_metal
-  ✓ ngrid_240_metal
-  ✓ ngrid_60_jelly
-  ✓ ngrid_240_jelly
-  ✓ dt_5e-05_metal
-  ✓ dt_0.0002_metal
-  ✓ dt_5e-05_jelly
-  ✓ dt_0.0002_jelly
-  ✓ damping_0.9995_metal
-  ✓ damping_1.005_metal
-  ✓ damping_0.9995_jelly
-  ✓ damping_1.005_jelly
-  ✓ soft_0.05_metal
-  ✓ soft_0.2_metal
-  ✓ soft_0.05_jelly
-  ✓ soft_0.2_jelly
+  ✓ jelly
+  ✓ sand
+  ✓ snow
+  ✓ metal
+  ✓ foam
+  ✓ plasticine
+  ✓ jelly_ngrid25
+  ✓ jelly_ngrid100
+  ✓ sand_ngrid25
+  ✓ sand_ngrid100
+  ✓ jelly_dt5e-05
+  ✓ sand_dt5e-05
+  ✓ jelly_damping0.9995
+  ✓ jelly_damping1.005
+  ✓ sand_damping0.9995
+  ✓ sand_damping1.005
+  ✓ jelly_soft0.05
+  ✓ jelly_soft0.2
+  ✓ sand_soft0.05
+  ✓ sand_soft0.2
 
 Parameter combinations tested:
-  Materials: ['metal', 'jelly']
-  n_grid: [60, 240] + default
-  substep_dt: [5e-05, 0.0002] + default
+  Materials: ['jelly', 'sand']
+  n_grid: [25, 100] + default
+  substep_dt: [5e-05] + default
   grid_v_damping_scale: [0.9995, 1.005] + default
   softening: [0.05, 0.2] + default

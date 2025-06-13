@@ -1,0 +1,8 @@
+Experiment: foam
+Start time: 2025-06-13 22:45:38.006194
+Duration: 98.93 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/foam --config ./config/ficus_config.json --material foam --render_img --compile_video --white_bg
+Material: foam
+
+Output redirected to:
+  combined log: ./ablation_results/foam/simulation.log

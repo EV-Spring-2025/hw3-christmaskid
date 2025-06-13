@@ -1,0 +1,9 @@
+Experiment: sand_soft0.2
+Start time: 2025-06-13 23:08:44.124981
+Duration: 70.79 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_soft0.2 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --softening 0.2
+Material: sand
+softening: 0.2
+
+Output redirected to:
+  combined log: ./ablation_results/sand_soft0.2/simulation.log

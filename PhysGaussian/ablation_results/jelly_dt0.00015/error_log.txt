@@ -1,0 +1,8 @@
+Experiment: jelly_dt0.00015
+Start time: 2025-06-13 22:11:23.916803
+Duration: 6.10 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_dt0.00015 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --substep_dt 0.00015
+Error: Command '['python', 'gs_simulation.py', '--model_path', './model/ficus_whitebg-trained/', '--output_path', './ablation_results/jelly_dt0.00015', '--config', './config/ficus_config.json', '--material', 'jelly', '--render_img', '--compile_video', '--white_bg', '--substep_dt', '0.00015']' died with <Signals.SIGABRT: 6>.
+
+Output logs:
+  combined log: ./ablation_results/jelly_dt0.00015/simulation.log

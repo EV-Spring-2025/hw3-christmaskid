@@ -1,0 +1,8 @@
+Experiment: plasticine
+Start time: 2025-06-13 22:47:16.941246
+Duration: 106.00 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/plasticine --config ./config/ficus_config.json --material plasticine --render_img --compile_video --white_bg
+Material: plasticine
+
+Output redirected to:
+  combined log: ./ablation_results/plasticine/simulation.log

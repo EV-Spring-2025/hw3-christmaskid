@@ -1,7 +1,7 @@
 Experiment: jelly_damping0.9995
-Start time: 2025-06-12 01:26:19.862351
-Duration: 216.19 seconds
-Command: python gs_simulation.py --model_path ./model/plane-trained/ --output_path ./ablation_results/jelly_damping0.9995 --config ./config/plane_config.json --material jelly --render_img --compile_video --white_bg --grid_v_damping_scale 0.9995
+Start time: 2025-06-13 22:59:24.481070
+Duration: 75.74 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_damping0.9995 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --grid_v_damping_scale 0.9995
 Material: jelly
 grid_v_damping_scale: 0.9995
 

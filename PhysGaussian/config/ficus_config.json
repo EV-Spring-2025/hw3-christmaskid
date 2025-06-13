@@ -14,6 +14,9 @@
     "rpic_damping": 0.0,
     "boundary_conditions": [
         {
+            "type": "bounding_box"
+        },
+        {
             "type": "cuboid",
             "point": [
                 1,

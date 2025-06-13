@@ -1,0 +1,8 @@
+Experiment: snow
+Start time: 2025-06-13 22:39:22.412623
+Duration: 257.33 seconds
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/snow --config ./config/ficus_config.json --material snow --render_img --compile_video --white_bg
+Material: snow
+
+Output redirected to:
+  combined log: ./ablation_results/snow/simulation.log

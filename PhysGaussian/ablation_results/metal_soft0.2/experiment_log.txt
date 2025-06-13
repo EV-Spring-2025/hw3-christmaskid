@@ -1,9 +1,0 @@
-Experiment: metal_soft0.2
-Start time: 2025-06-12 01:37:15.544717
-Duration: 217.75 seconds
-Command: python gs_simulation.py --model_path ./model/plane-trained/ --output_path ./ablation_results/metal_soft0.2 --config ./config/plane_config.json --material metal --render_img --compile_video --white_bg --softening 0.2
-Material: metal
-softening: 0.2
-
-Output redirected to:
-  combined log: ./ablation_results/metal_soft0.2/simulation.log
