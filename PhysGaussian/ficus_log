@@ -1,0 +1,364 @@
+Starting PhysGaussian Ablation Study
+Model path: ./model/ficus_whitebg-trained/
+Config: ./config/ficus_config.json
+Output base: ./ablation_results
+Materials: ['jelly', 'sand']
+
+============================================================
+Running experiment: jelly
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg
+Output path: ./ablation_results/jelly
+============================================================
+✓ Experiment completed successfully in 80.82 seconds
+
+============================================================
+Running experiment: sand
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg
+Output path: ./ablation_results/sand
+============================================================
+✓ Experiment completed successfully in 76.07 seconds
+
+============================================================
+Running experiment: snow
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/snow --config ./config/ficus_config.json --material snow --render_img --compile_video --white_bg
+Output path: ./ablation_results/snow
+============================================================
+✓ Experiment completed successfully in 76.64 seconds
+
+============================================================
+Running experiment: metal
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/metal --config ./config/ficus_config.json --material metal --render_img --compile_video --white_bg
+Output path: ./ablation_results/metal
+============================================================
+✓ Experiment completed successfully in 80.15 seconds
+
+============================================================
+Running experiment: foam
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/foam --config ./config/ficus_config.json --material foam --render_img --compile_video --white_bg
+Output path: ./ablation_results/foam
+============================================================
+✓ Experiment completed successfully in 77.28 seconds
+
+============================================================
+Running experiment: plasticine
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/plasticine --config ./config/ficus_config.json --material plasticine --render_img --compile_video --white_bg
+Output path: ./ablation_results/plasticine
+============================================================
+✓ Experiment completed successfully in 82.18 seconds
+
+============================================================
+Running experiment: jelly_ngrid25
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_ngrid25 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --n_grid 25
+Output path: ./ablation_results/jelly_ngrid25
+============================================================
+✓ Experiment completed successfully in 80.24 seconds
+
+Running evaluation for jelly_ngrid25...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_ngrid25 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_ngrid25:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_ngrid25 failed.
+
+============================================================
+Running experiment: jelly_ngrid100
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_ngrid100 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --n_grid 100
+Output path: ./ablation_results/jelly_ngrid100
+============================================================
+✓ Experiment completed successfully in 79.50 seconds
+
+Running evaluation for jelly_ngrid100...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_ngrid100 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_ngrid100:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_ngrid100 failed.
+
+============================================================
+Running experiment: sand_ngrid25
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_ngrid25 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --n_grid 25
+Output path: ./ablation_results/sand_ngrid25
+============================================================
+✓ Experiment completed successfully in 73.76 seconds
+
+Running evaluation for sand_ngrid25...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_ngrid25 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_ngrid25:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_ngrid25 failed.
+
+============================================================
+Running experiment: sand_ngrid100
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_ngrid100 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --n_grid 100
+Output path: ./ablation_results/sand_ngrid100
+============================================================
+✓ Experiment completed successfully in 72.95 seconds
+
+Running evaluation for sand_ngrid100...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_ngrid100 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_ngrid100:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_ngrid100 failed.
+
+============================================================
+Running experiment: jelly_dt5e-05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_dt5e-05 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --substep_dt 5e-05
+Output path: ./ablation_results/jelly_dt5e-05
+============================================================
+✓ Experiment completed successfully in 135.63 seconds
+
+Running evaluation for jelly_dt5e-05...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_dt5e-05 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_dt5e-05:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_dt5e-05 failed.
+
+============================================================
+Running experiment: jelly_dt0.0002
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_dt0.0002 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --substep_dt 0.0002
+Output path: ./ablation_results/jelly_dt0.0002
+============================================================
+✗ Experiment failed after 6.77 seconds
+Error: Command '['python', 'gs_simulation.py', '--model_path', './model/ficus_whitebg-trained/', '--output_path', './ablation_results/jelly_dt0.0002', '--config', './config/ficus_config.json', '--material', 'jelly', '--render_img', '--compile_video', '--white_bg', '--substep_dt', '0.0002']' died with <Signals.SIGABRT: 6>.
+
+Running evaluation for jelly_dt0.0002...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_dt0.0002 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_dt0.0002:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_dt0.0002 failed.
+
+============================================================
+Running experiment: sand_dt5e-05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_dt5e-05 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --substep_dt 5e-05
+Output path: ./ablation_results/sand_dt5e-05
+============================================================
+✓ Experiment completed successfully in 130.67 seconds
+
+Running evaluation for sand_dt5e-05...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_dt5e-05 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_dt5e-05:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_dt5e-05 failed.
+
+============================================================
+Running experiment: sand_dt0.0002
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_dt0.0002 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --substep_dt 0.0002
+Output path: ./ablation_results/sand_dt0.0002
+============================================================
+✓ Experiment completed successfully in 48.78 seconds
+
+Running evaluation for sand_dt0.0002...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_dt0.0002 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_dt0.0002:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_dt0.0002 failed.
+
+============================================================
+Running experiment: jelly_damping0.9995
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_damping0.9995 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --grid_v_damping_scale 0.9995
+Output path: ./ablation_results/jelly_damping0.9995
+============================================================
+✓ Experiment completed successfully in 80.11 seconds
+
+Running evaluation for jelly_damping0.9995...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_damping0.9995 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_damping0.9995:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_damping0.9995 failed.
+
+============================================================
+Running experiment: jelly_damping1.005
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_damping1.005 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --grid_v_damping_scale 1.005
+Output path: ./ablation_results/jelly_damping1.005
+============================================================
+✓ Experiment completed successfully in 78.49 seconds
+
+Running evaluation for jelly_damping1.005...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_damping1.005 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_damping1.005:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_damping1.005 failed.
+
+============================================================
+Running experiment: sand_damping0.9995
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_damping0.9995 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --grid_v_damping_scale 0.9995
+Output path: ./ablation_results/sand_damping0.9995
+============================================================
+✓ Experiment completed successfully in 79.82 seconds
+
+Running evaluation for sand_damping0.9995...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_damping0.9995 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_damping0.9995:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_damping0.9995 failed.
+
+============================================================
+Running experiment: sand_damping1.005
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_damping1.005 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --grid_v_damping_scale 1.005
+Output path: ./ablation_results/sand_damping1.005
+============================================================
+✓ Experiment completed successfully in 72.70 seconds
+
+Running evaluation for sand_damping1.005...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_damping1.005 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_damping1.005:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_damping1.005 failed.
+
+============================================================
+Running experiment: jelly_soft0.05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_soft0.05 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --softening 0.05
+Output path: ./ablation_results/jelly_soft0.05
+============================================================
+✓ Experiment completed successfully in 79.30 seconds
+
+Running evaluation for jelly_soft0.05...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_soft0.05 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_soft0.05:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_soft0.05 failed.
+
+============================================================
+Running experiment: jelly_soft0.2
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/jelly_soft0.2 --config ./config/ficus_config.json --material jelly --render_img --compile_video --white_bg --softening 0.2
+Output path: ./ablation_results/jelly_soft0.2
+============================================================
+✓ Experiment completed successfully in 79.50 seconds
+
+Running evaluation for jelly_soft0.2...
+Command: python psnr.py --predicted_dir ./ablation_results/jelly_soft0.2 --gt_output_dir ./ablation_results/jelly
+Evaluation failed for jelly_soft0.2:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for jelly_soft0.2 failed.
+
+============================================================
+Running experiment: sand_soft0.05
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_soft0.05 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --softening 0.05
+Output path: ./ablation_results/sand_soft0.05
+============================================================
+✓ Experiment completed successfully in 74.11 seconds
+
+Running evaluation for sand_soft0.05...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_soft0.05 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_soft0.05:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_soft0.05 failed.
+
+============================================================
+Running experiment: sand_soft0.2
+Command: python gs_simulation.py --model_path ./model/ficus_whitebg-trained/ --output_path ./ablation_results/sand_soft0.2 --config ./config/ficus_config.json --material sand --render_img --compile_video --white_bg --softening 0.2
+Output path: ./ablation_results/sand_soft0.2
+============================================================
+✓ Experiment completed successfully in 75.20 seconds
+
+Running evaluation for sand_soft0.2...
+Command: python psnr.py --predicted_dir ./ablation_results/sand_soft0.2 --gt_output_dir ./ablation_results/sand
+Evaluation failed for sand_soft0.2:
+Traceback (most recent call last):
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 86, in <module>
+    main()
+  File "/tmp2/b09401064/hw3-christmaskid/PhysGaussian/psnr.py", line 71, in main
+    if not os.path.exists(args.model_path):
+AttributeError: 'Namespace' object has no attribute 'model_path'
+
+Evaluation for sand_soft0.2 failed.
+
+================================================================================
+ABLATION STUDY COMPLETE
+================================================================================
+Total experiments: 22
+Successful: 21
+Failed: 1
+Total duration: 1766.00 seconds (0.49 hours)
+Average per experiment: 80.27 seconds
+
+Summary saved to: ./ablation_results/ablation_summary.txt
+Individual experiment results in: ./ablation_results
